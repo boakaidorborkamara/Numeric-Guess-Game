@@ -13,7 +13,7 @@
 
             <div class="welcomeGround">
                 <div id="gameName">
-                    <h1>NUMERIC <br> GUESS GAME</h1>
+                    <h2>NUMERIC <br> GUESS GAME</h2>
                 </div>
                 <div id="instructionsArea">
                     <ul>
@@ -25,8 +25,8 @@
                 </div>
                 <div id="resultsArea"> 
                     <h3>YOUR RESULTS HERE</h3>
-                    <p id="previousGuesses">Previous Guesses:</p>
-                    <p id="guessesRemaining">Guesses Remaining</p>
+                    <p >Guesses Remaining: <span id="guessesRemaining"></span> </p>
+                    <p >Previous Guesses: <br> <span id="previousGuesses"></span> </p>
                     <p id="finalResult"></p>
                 </div>  
             </div>
@@ -35,11 +35,11 @@
                 <div class="guessArea"> 
                     <h2>PLAY GROUND</h2>
                     <p>Input a number below and submit</p>
-                    <input type="number" id="guess" placeholder="GUESS" id="inputArea">
+                    <input type="number"  placeholder="GUESS" id="guess">
                 </div>  
                 <div class="lower">
-                    <button type="button" value="" onclick="evaluateInput();"> Submit Number</button>
-                    <button id="cancelBtn" type="reset" onclick="resetGame();">Restart</button>
+                    <button type="button" id="submitBtn"> Submit Number</button>
+                    <button  type="reset" id="cancelBtn" >Restart</button>
                 </div>
             </div>
 
