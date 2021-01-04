@@ -7,6 +7,8 @@ let cancel_btn = document.getElementById("cancelBtn");
 let playerInput = document.getElementById("guess");
 let result = document.getElementById("finalResult");
 
+//close game
+
 //checking if user is equal to radom number
 function evaluateInput(){
 
@@ -23,6 +25,9 @@ function evaluateInput(){
        document.getElementById("finalResult").style="padding: 10px;"
        result.style.backgroundColor = "white";
         result.style.color = "rgb(2, 2, 54)";
+        if( document.getElementById("finalResult").innerHTML==="You Win")
+        playerInput.disabled = true;
+        submit_btn.disabled = true;
     }
     else if(parseInt(playerInput.value) > 100)
     {
@@ -92,13 +97,30 @@ function checkGuessChances(){
         result.innerText = "Chances over, you loose.                                  The correct number is " + correctAnswer ;
         result.style.backgroundColor = "white";
         result.style.color = "red";
+        playerInput.disabled = true;
+        submit_btn.disabled = true;
     }
 }
+//disable box when game wins
+// function disableInput(){
+//     if( document.getElementById("finalResult").innerHTML==="You Win")
+//     playerInput.disabled = true;
+//     submit_btn.disabled = true;
+
+// }
+
+// let exitBtn = document.getElementById("closeGame");
+// exitBtn.addEventListener("click" , closeGame);
+// function closeGame(){
+//     window.close();
+//     console.log("close");
+// }
 
 submit_btn.addEventListener("click" , evaluateInput);
 submit_btn.addEventListener("click" , reduceGuessChances);
 submit_btn.addEventListener("click" , displayPreviousGuesses);
 submit_btn.addEventListener("click" , checkGuessChances);
+// submit_btn.addEventListener("click" , disableInput);
 playerInput.addEventListener("focus" , clearPreviousResult);
 cancel_btn.addEventListener("click" , resetGame);
 
